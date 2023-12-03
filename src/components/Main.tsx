@@ -14,8 +14,7 @@ interface Props {
 
 const Main = ({hues, addHue} : Props) => {
   return (
-    <div className='flex flex-wrap w-full justify-center gap-8 overflow-y-auto'>
-
+    <div className='main flex flex-wrap w-full pl-12 gap-6 overflow-y-auto'>
         <PostHue addHue={addHue}/>
 
 

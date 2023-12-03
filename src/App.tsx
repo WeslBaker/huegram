@@ -1,6 +1,7 @@
 //import Menu from './components/Menu'
 import Main from './components/Main'
 import Profile from './components/Profile'
+import NavBar from './components/NavBar'
 import { useEffect, useState } from 'react'
 
 function App() {
@@ -29,10 +30,12 @@ function App() {
   }
 
   return (
-    <div className='flex bg-slate-800 h-screen'>
+    <div className='flex bg-slate-900 h-screen'>
       {/* <Menu /> */}
-
-      <Main hues={hues} addHue = {addNewHue} />
+      <div className="flex flex-col">
+        <NavBar />
+        <Main hues={hues} addHue = {addNewHue} />
+      </div>
 
       <Profile />
     </div>
