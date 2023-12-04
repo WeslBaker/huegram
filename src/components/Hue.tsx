@@ -1,9 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-interface HueObject {
-  color: string;
-  username: string;
-  likes: number;
-}
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import HueObject from './HueModel';
 
 interface Props {
   hue: HueObject;

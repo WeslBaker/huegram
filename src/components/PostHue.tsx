@@ -21,7 +21,7 @@ const PostHue = (props:Props) => {
               } className="btn bg-slate-600 rounded-full text-slate-400 hover:bg-slate-700 hover:test-slate-500 text-center w-1/3 mx-auto h-8">Post</a>
         </div>
 
-        <Hue hue={ {color, username:"kavery", likes:3}} />
+        <Hue hue={ {color, username:"kavery", likes:3, isLiked: false}} />
 
     </div>
   )
