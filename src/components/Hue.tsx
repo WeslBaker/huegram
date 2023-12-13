@@ -3,6 +3,7 @@ import HueObject from './HueModel';
 
 interface Props {
   hue: HueObject;
+  toggleLike?: (id?:number) => void;
 }
 
 function getTextColor(backgroundColor:string): string
@@ -21,14 +22,20 @@ function getTextColor(backgroundColor:string): string
 const Hue = (props: Props) => {
   return (
     <div
-      className="flex flex-col h-64 aspect-square rounded-xl text-center justify-between items-center"
+      className="flex flex-col h-64 aspect-square rounded-b-2xl rounded-t-xl text-center justify-between items-center"
       style={{ backgroundColor: props.hue.color }}
+      onDoubleClick={() => props.toggleLike && props.toggleLike(props.hue.id)}
     >
       <p className={`hue-color text-${getTextColor(props.hue.color)} text-2xl opacity-80`}>{props.hue.color}</p>
 
-      <div className="bg-slate-800 text-white flex w-full text-center justify-center p-4 rounded-b-xl">
+      <div className="bg-slate-800 text-white flex w-full text-center justify-between p-4 rounded-b-xl">
         <p className="text-xl">{props.hue.username}</p>
-        {/* <FontAwesomeIcon icon="fa-regular fa-heart" /> */}
+        <button onClick={() => props.toggleLike && props.toggleLike(props.hue.id)}>
+          {!props.hue.isLiked && <img className = "w-8" src="heart-unfilled.svg"></img>}
+          {props.hue.isLiked && <img className = "w-8" src="heart-filled.svg"></img>}
+        </button>
+
+
 
       </div>
     </div>
